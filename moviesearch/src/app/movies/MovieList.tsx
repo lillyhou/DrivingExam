@@ -13,7 +13,8 @@ export default function MovieList({ movies }: MovieListProps) {
             <div className={styles.movies}>
                 {movies.map(movie => (
                     <div key={movie.imdbID} className={styles.movie}>
-                        <div className={styles.moviePoster}><Link href={`/movies/${movie.imdbID}`}><img src={movie.Poster} alt={movie.Title} /></Link></div>
+                        <div className={styles.moviePoster}><Link href={`/movies/${movie.imdbID}`}>
+                        <img src={movie.Poster} alt={movie.Title} /></Link></div>
                         <div className={styles.movieTitle}>{movie.Title}</div>
                     </div>
                 ))}
