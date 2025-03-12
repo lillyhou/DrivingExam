@@ -1,54 +1,78 @@
 'use client';
 
-import { useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import { TodoItem } from "../types/TodoItem";
-import { Category } from "../types/Category";
 import styles from "./style.module.css";
+import TodosDelete from "./TodosDelete";
 
-type Props = {
-    todoItems: TodoItem[];
-    categories: Category[];
-};
+type Action =
+    | { type: "delete"; todo: TodoItem }
+    | { type: "cancel" };
 
-export default function TodosClient({ todoItems, categories }: Props) {
-    const [selectedCategory, setSelectedCategory] = useState<string>("");
+type State =
+    | { actionType: "delete"; todo: TodoItem }
+    | { actionType: null };
 
-    const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setSelectedCategory(event.target.value);
-    };
+function reducer(state: State, action: Action): State {
+    switch (action.type) {
+        case "delete":
+            return { actionType: "delete", todo: action.todo };
+        case "cancel":
+            return { actionType: null };
+        default:
+            return state;
+    }
+}
 
-    const filteredTodoItems = selectedCategory
-        ? todoItems.filter(item => item.categoryName === selectedCategory)
-        : todoItems;
+export default function TodosClient() {
+    const [state, dispatch] = useReducer(reducer, { actionType: null });
+    const [todoItems, setTodoItems] = useState<TodoItem[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        async function fetchTodos() {
+            try {
+                const response = await fetch("https://localhost:5443/api/TodoItems");
+                const data = await response.json();
+                setTodoItems(data);
+            } catch (error) {
+                console.error("Fehler beim Laden der Todos:", error);
+            } finally {
+                setLoading(false);
+            }
+        }
+        fetchTodos();
+    }, []);
+
+    if (loading) {
+        return <p>Lädt Todos...</p>;
+    }
 
     return (
         <div className={styles.categories}>
             <h1>Todo Liste</h1>
-            <select onChange={handleCategoryChange}>
-                <option value="">Alle Kategorien</option>
-                {categories.map(category => (
-                    <option key={category.guid} value={category.name}>
-                        {category.name}
-                    </option>
-                ))}
-            </select>
-
             <ul>
-                {filteredTodoItems.map(item => (
-                    <li
-                        key={item.guid}
-                        className={
-                            new Date(item.dueDate) < new Date() ? styles.overdue : styles.onTime
-                        }
-                    >
+                {todoItems.map(item => (
+                    <li key={item.guid}>
                         <h2>{item.title}</h2>
                         <p>{item.description}</p>
-                        <p>Kategorie: {item.categoryName} (GUID {item.categoryGuid})</p>
-                        <p>Fällig am: {new Date(item.dueDate).toLocaleDateString()}</p>
                         <p>Status: {item.isCompleted ? "Abgeschlossen" : "Ausstehend"}</p>
+                        <button
+                            className={styles.deleteButton}
+                            onClick={() => dispatch({ type: "delete", todo: item })}
+                        >
+                            🗑️ Löschen
+                        </button>
                     </li>
                 ))}
             </ul>
+            {state.actionType === "delete" && (
+                <TodosDelete
+                    todo={state.todo}
+                    onCancel={() => dispatch({ type: "cancel" })}
+                    onDeleted={() => dispatch({ type: "cancel" })}
+                />
+            )}
         </div>
     );
 }
