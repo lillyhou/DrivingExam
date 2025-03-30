@@ -8,13 +8,15 @@ import CategoryDelete from "./CategoryDelete";
 import { useTodoAppState } from "@/app/context/TodoAppContext"
 // Discriminated unions in typescript
 type ReducerAction =
-  | { resetState: true }
-  | { resetState?: false; intent: "edit" | "delete"; category: Category };
+  | { resetState: true } // Closes any active modal.
+  | { resetState?: false; intent: "edit" | "delete"; category: Category }; // Opens the respective modal with the selected category.
+
 type CategoryListState =
   | { dialogType: "" }
   | { dialogType: "error"; error: string }
   | { dialogType: "edit" | "delete"; category: Category };
-
+  
+// The reducer is used to manage UI state transitions, such as opening a dialog for editing or deleting a category.
 function reducer(
   state: CategoryListState,
   action: ReducerAction): CategoryListState {

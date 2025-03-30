@@ -1,3 +1,5 @@
+"use client" //here can work without "use client", because "useEffect, useState" work only as client page
+
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import ModalDialog from "../components/ModalDialog";
 import { Category } from "../types/Category";
