@@ -7,7 +7,7 @@ import { Dispatch, FormEvent, RefObject, SetStateAction, useEffect, useRef, useS
 
 
 async function handleSubmit(event: FormEvent, setError: Dispatch<SetStateAction<ErrorResponse>>,
-    formRef: RefObject<HTMLFormElement>) {
+    formRef: RefObject<HTMLFormElement | null>) {
     event.preventDefault();
     const response = await addCategory(new FormData(event.target as HTMLFormElement));
     if (isErrorResponse(response))

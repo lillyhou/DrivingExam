@@ -1,3 +1,6 @@
+//This file named "categoryApiClient", it’s a server-side API client, not a frontend one. For frontend it's a server file.
+//It is used inside Next.js pages/components to fetch data without exposing API calls to the browser.
+
 "use server";
 import { ErrorResponse, axiosInstance, createErrorResponse } from "@/app/utils/apiClient";
 import { revalidatePath } from "next/cache";
