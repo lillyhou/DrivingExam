@@ -8,15 +8,13 @@ import CategoryDelete from "./CategoryDelete";
 import { useTodoAppState } from "@/app/context/TodoAppContext"
 // Discriminated unions in typescript
 type ReducerAction =
-  | { resetState: true } // Closes any active modal.
-  | { resetState?: false; intent: "edit" | "delete"; category: Category }; // Opens the respective modal with the selected category.
-
+  | { resetState: true }
+  | { resetState?: false; intent: "edit" | "delete"; category: Category };
 type CategoryListState =
   | { dialogType: "" }
   | { dialogType: "error"; error: string }
   | { dialogType: "edit" | "delete"; category: Category };
-  
-// The reducer is used to manage UI state transitions, such as opening a dialog for editing or deleting a category.
+
 function reducer(
   state: CategoryListState,
   action: ReducerAction): CategoryListState {
@@ -55,22 +53,27 @@ export default function CategoryList({ categories }: { categories: Category[] })
           <li key={category.guid}>
             <div className={styles.categoryHeader}>
               <h2>{category.name}</h2>
-              <span
-                className={styles.editIcon}
-                onClick={() => {
-                  dispatcher({ intent: "edit", category: category })
-                }}
-                title="Edit"
-              >
-                ✏️
-              </span>
-              <span
-                className={styles.editIcon}
-                onClick={() => dispatcher({ intent: "delete", category: category })}
-                title="Delete"
-              >
-                🗑️
-              </span>
+              
+              {todoAppState.activeUser && todoAppState.activeUser !== "Guest" && (
+                <>
+                  <span
+                    className={styles.editIcon}
+                    onClick={() => {
+                      dispatcher({ intent: "edit", category: category });
+                    }}
+                    title="Edit"
+                  >
+                    ✏️
+                  </span>
+                  <span
+                    className={styles.editIcon}
+                    onClick={() => dispatcher({ intent: "delete", category: category })}
+                    title="Delete"
+                  >
+                    🗑️
+                  </span>
+                </>
+              )}
             </div>
             <p>{category.description}</p>
             <p>Visible: {category.isVisible ? "yes" : "no"}</p>

@@ -14,7 +14,7 @@ type TodoAppStateActions = {
     /**
      * Setzt den aktiven Benutzer im globalen State.
      */
-    setActiveUser: (value: string) => void;
+    setActiveUser: (value: string | null) => void;
 };
 
 /**
@@ -25,7 +25,7 @@ type TodoAppState = {
     error: string;
 
     /** Speichert den aktuellen aktiven Benutzer. */
-    activeUser: string;
+    activeUser: string | null;
 };
 
 /**
@@ -41,7 +41,7 @@ const TodoAppContext = createContext<TodoAppContextType | undefined>(undefined);
  * Stellt den State und Funktionen zur Aktualisierung zur Verfügung.
  */
 export function TodoAppStateProvider({ children }: { children: ReactNode }) {
-    const [state, setState] = useState<TodoAppState>({ error: "", activeUser: "" });
+    const [state, setState] = useState<TodoAppState>({ error: "", activeUser: null });
 
     /**
      * Aktualisiert die Fehlermeldung im State.
@@ -53,7 +53,12 @@ export function TodoAppStateProvider({ children }: { children: ReactNode }) {
      * Aktualisiert den aktiven Benutzer im State.
      * @param {string} value - Der Benutzername des aktiven Nutzers.
      */
-    const setActiveUser = (value: string) => setState(prev => ({ ...prev, activeUser: value }));
+    const setActiveUser = (value: string | null) => {
+        setState(prev => ({ 
+            ...prev, 
+            activeUser: value === "" ? null : value 
+        }));
+    };
 
     return (
         <TodoAppContext.Provider value={{ ...state, actions: { setError, setActiveUser } }}>
