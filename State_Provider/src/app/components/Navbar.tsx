@@ -7,6 +7,8 @@ import { useTodoAppState } from '@/app/context/TodoAppContext'
 
 export default function Navbar() {
     const pathname = usePathname(); // Aktuellen Pfad abrufen
+    const todoAppState = useTodoAppState();
+    const { activeUser, actions } = todoAppState;
     return (
         <nav className={styles.nav}>
             <Link
@@ -33,6 +35,15 @@ export default function Navbar() {
             >
                 About
             </Link>
+
+            {activeUser && (
+                <span className={styles.userSection}>
+                    <span>Welcome, {activeUser}</span>
+                    <button className={styles.logoutButton} onClick={() => actions.setActiveUser("")}>
+                       Logout
+                    </button>
+                </span>
+            )}
         </nav>
     );
 }

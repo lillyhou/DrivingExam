@@ -1,7 +1,9 @@
+"use client";
 import Navbar from "@/app/components/Navbar";
 import './globals.css'; // Importiere die globale CSS-Datei
-import { TodoAppStateProvider } from "./context/TodoAppContext";
+import { TodoAppStateProvider, useTodoAppState } from "./context/TodoAppContext";
 import ErrorViewer from "./components/ErrorViewer";
+import NameInput from "./components/NameInput";
 
 export default function RootLayout({
     children,
@@ -21,13 +23,23 @@ export default function RootLayout({
             </head>
             <body>
                 <TodoAppStateProvider>
-                    <div className="container">
-                        <Navbar />
-                        <main className="content">{children}</main>
-                        <ErrorViewer />
-                    </div>
+                   
+                    <LayoutContent>{children}</LayoutContent>
                 </TodoAppStateProvider>
             </body>
         </html>
+    );
+}
+
+function LayoutContent({ children }: { children: React.ReactNode }) {
+    const todoAppState = useTodoAppState();
+
+    return (
+        <div className="container">
+            <Navbar />
+            <main className="content">{children}</main>
+            <ErrorViewer />
+          {(todoAppState.activeUser === null || todoAppState.activeUser === "") && <NameInput />}
+        </div>
     );
 }
