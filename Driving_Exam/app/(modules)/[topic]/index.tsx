@@ -7,7 +7,7 @@ import { FlatList, Text, TouchableOpacity, View } from 'react-native';
 
 export default function TopicScreen() {
   const router = useRouter();  
-  const { topic: moduleGuid } = useLocalSearchParams(); 
+  const { topic: moduleGuid, name: moduleName } = useLocalSearchParams();
   const [topics, setTopics] = useState<Topics[]>([]);
   const [error, setError] = useState<string | null>(null);
 
@@ -37,24 +37,27 @@ export default function TopicScreen() {
     );
   }
 
-const onPressTopic = (topicGuid: string) => {
+const onPressTopic = (topicGuid: string, topicName: string) => {
   const topicParam = Array.isArray(moduleGuid) ? moduleGuid[0] : moduleGuid;
+console.log("topicName: ",topicName)
   router.push({
     pathname: "/(modules)/[topic]/questions",
-    params: { topic: topicParam, topicGuid },
+    params: { topic: topicParam, topicGuid, topicName },
   });
 };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Topics:</Text>
+      <Text style={styles.header}>
+        {moduleName ? `${moduleName} - ` : ''}Topics:
+      </Text>
       <FlatList
         data={topics}
         keyExtractor={(item) => item.guid}
         renderItem={({ item }) => (
           <TouchableOpacity
             style={styles.topicItem}
-            onPress={() => onPressTopic(item.guid)}
+            onPress={() => onPressTopic(item.guid, item.name)}
           >
             <Text style={styles.topicText}>
               {item.name} ({item.questionCount} questions)

@@ -9,8 +9,8 @@ export const styles = StyleSheet.create({
   header: {
     fontSize: 22,
     fontWeight: '600',
-    marginBottom: 12,
-    color: '#333',
+    marginBottom: 18,
+    color: '#007bff',
   },
   topicItem: {
     paddingVertical: 12,
@@ -18,8 +18,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#f8f8f8',
     borderRadius: 8,
     marginBottom: 10,
-    elevation: 1, // Android shadow
-    shadowColor: '#000', // iOS shadow
+    elevation: 1, // (Android shadow)
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.1,
     shadowRadius: 3,

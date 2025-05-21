@@ -1,5 +1,5 @@
 
-import { Questions } from '@/types/Questions';
+import { isQuestions, Questions } from '@/types/Questions';
 import { axiosInstance, createErrorResponse, ErrorResponse } from '../apiClient';
 
 /**
@@ -11,7 +11,7 @@ export async function getQuestions(moduleGuid: string, topicGuid: string): Promi
   try {
     const response = await axiosInstance.get(`/api/Questions?moduleGuid=${moduleGuid}&topicGuid=${topicGuid}`);
 console.log("api response:", response.data);
-    return response.data;
+    return response.data.filter(isQuestions);
   } catch (e) {
     return createErrorResponse(e);
   }

@@ -25,6 +25,8 @@ export default function ModulesIndexScreen(){
         }, [])
     );
 
+    
+
     return(
         <View style={styles.container}>
       <FlatList
@@ -32,7 +34,10 @@ export default function ModulesIndexScreen(){
         keyExtractor={(item) => item.guid.toString()}
         renderItem={({ item }) => (
           <TouchableOpacity style={styles.card}
-           onPress={() => router.push(`/(modules)/${item.guid}`)}>
+          onPress={() => router.push({
+                      pathname: "/(modules)/[topic]",
+                      params: { topic: item.guid, name: item.name }
+                    })}>
             
             <Text style={styles.title}>{item.name}</Text>
           </TouchableOpacity>

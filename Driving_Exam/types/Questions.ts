@@ -3,9 +3,9 @@ export interface Questions{
     number: number;
     text: string;
     points: number;
-    imageUrl: string;
+    imageUrl: string | null;
     moduleGuid: string;
-    topicFuid: string;
+    topicGuid: string;
     answers: Answer[];
 }
 export interface Answer{
@@ -13,7 +13,7 @@ export interface Answer{
     text: string;
 }
 
-export function isQuestions(item: any): item is Questions {
+export function isQuestions(item: any): item is Questions { 
     return (
         typeof item === 'object' &&
 
@@ -21,8 +21,9 @@ export function isQuestions(item: any): item is Questions {
         'number' in item &&
         'text' in item &&
         'points' in item &&
+        'imageUrl' in item &&
         'moduleGuid' in item &&
-        'topicFuid' in item &&
+        'topicGuid' in item &&
         'answers' in item
     );
 }

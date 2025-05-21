@@ -1,12 +1,12 @@
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { Button, Image, ScrollView, Text, View } from 'react-native';
+import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 
 import { getQuestions } from '@/utils/questions/apiClient';
 import { styles } from '@/utils/questions/index.styles';
 
 export default function QuestionScreen() {
-  const { topic: moduleGuid, topicGuid } = useLocalSearchParams();
+  const{topic: moduleGuid, topicGuid, topicName } = useLocalSearchParams();
 
   const [questions, setQuestions] = useState<any[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -57,6 +57,7 @@ export default function QuestionScreen() {
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={{ padding: 16 }}>
+      <Text style={styles.topicName}>{topicName}</Text>
       <Text style={styles.questionNumber}>Question #{question.number}</Text>
       <Text style={styles.questionText}>{question.text}</Text>
 
@@ -72,13 +73,19 @@ export default function QuestionScreen() {
         ))}
       </View>
 
-      <View style={styles.buttonContainer}>
-        <Button
-          title={currentIndex === questions.length - 1 ? 'End' : 'Next'}
+      <TouchableOpacity
+        style={[
+            styles.nextButton,
+            currentIndex === questions.length - 1 && styles.disabledButton
+          ]}
           onPress={handleNext}
           disabled={currentIndex === questions.length - 1}
-        />
-      </View>
+        >
+        <Text style={styles.nextButtonText}>
+          {currentIndex === questions.length - 1 ? 'End' : 'Next'}
+        </Text>
+      </TouchableOpacity>
+
     </ScrollView>
   );
 }

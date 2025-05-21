@@ -2,6 +2,13 @@
 import { StyleSheet } from 'react-native';
 
 export const styles =  StyleSheet.create({
+  topicName: {
+    fontSize: 24,
+    fontWeight: '700',
+    marginBottom: 20,
+    color: '#007bff',
+  },
+
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -10,9 +17,9 @@ export const styles =  StyleSheet.create({
   },
   questionNumber: {
     fontWeight: '700',
-    fontSize: 18,
-    marginBottom: 8,
-    color: '#333',
+    fontSize: 15,
+    marginBottom: 3,
+    color: 'rgb(25, 86, 166)',
   },
   questionText: {
     fontSize: 20,
@@ -43,7 +50,7 @@ export const styles =  StyleSheet.create({
   buttonContainer: {
     marginTop: 16,
     alignSelf: 'center',
-    width: '50%',
+    width: '100%',
   },
   errorText: {
     color: '#ff3333',
@@ -52,4 +59,23 @@ export const styles =  StyleSheet.create({
     padding: 20,
     textAlign: 'center',
   },
+  nextButton: {
+  backgroundColor: '#007bff',
+  paddingVertical: 12,
+  paddingHorizontal: 32,
+  borderRadius: 10,
+  alignItems: 'center',
+  justifyContent: 'center',
+},
+
+nextButtonText: {
+  color: '#fff',
+  fontSize: 16,
+  fontWeight: '600',
+},
+
+disabledButton: {
+  backgroundColor: '#ccc',
+},
+
 });
