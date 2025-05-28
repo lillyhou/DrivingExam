@@ -93,7 +93,7 @@ export default function QuestionScreen() {
   };
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={{ padding: 16 }}>
+    <ScrollView style={styles.container} >
       <Text style={styles.topicName}>{topicName}</Text>
       <Text style={styles.questionNumber}>Question #{question.number}</Text>
       <Text style={styles.questionText}>{question.text}</Text>

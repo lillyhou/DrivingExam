@@ -35,6 +35,7 @@ namespace DrivingExamBackend.Controllers
             _db = db;
         }
 
+     
         [HttpGet]
         [ProducesResponseType<List<QuestionDto>>(StatusCodes.Status200OK)]
         public async Task<ActionResult<List<QuestionDto>>> GetQuestions([FromQuery] Guid moduleGuid, [FromQuery] Guid topicGuid)
@@ -111,5 +112,41 @@ namespace DrivingExamBackend.Controllers
                 Answers = answers.Select(a => a.Guid).ToList()
             });
         }
+
+
+        // /api/exam/(moduleGuid)?count=20 
+        [HttpGet("exam")]
+        [ProducesResponseType<List<QuestionDto>>(StatusCodes.Status200OK)]
+        public async Task<ActionResult<List<QuestionDto>>> GetRandomQuestions([FromQuery] Guid moduleGuid,[FromQuery] int count = 20)
+        {
+            var questions = await _db.Questions
+                .Where(q => q.Module.Guid == moduleGuid)
+                .Include(q => q.Answers)
+                .Include(q => q.Topic)
+                .Include(q => q.Module)
+                .ToListAsync(); 
+
+            var randomQuestions = questions
+                .OrderBy(_ => Guid.NewGuid())
+                .Take(count)
+                .Select(q => new QuestionDto(
+                    q.Guid,
+                    q.Number,
+                    q.Text,
+                    q.Points,
+                    q.ImageUrl,
+                    q.Module.Guid,
+                    q.Topic.Guid,
+                    q.Answers.Select(a => new AnswerDto(a.Guid, a.Text)).ToList()
+                ))
+                .ToList();
+
+            return Ok(randomQuestions);
+        }
+
+
+
+
     }
 }
+

@@ -14,6 +14,7 @@ export const styles =  StyleSheet.create({
     backgroundColor: '#fff',
     paddingHorizontal: 16,
     paddingTop: 24,
+    padding: 16
   },
   questionNumber: {
     fontWeight: '700',
