@@ -78,4 +78,33 @@ disabledButton: {
   backgroundColor: '#ccc',
 },
 
+backButton: {
+  marginTop: 12,
+  backgroundColor: '#ccc',
+  paddingVertical: 12,
+  borderRadius: 10,
+  alignItems: 'center',
+},
+
+backButtonText: {
+  fontSize: 16,
+  fontWeight: '600',
+  color: '#333',
+},
+
+submitButton: {
+  backgroundColor: '#007BFF',
+  padding: 12,
+  borderRadius: 8,
+  marginTop: 20,
+  marginBottom: 10,
+  alignItems: 'center',
+},
+submitButtonText: {
+  color: '#fff',
+  fontSize: 16,
+  fontWeight: 'bold',
+},
+
+
 });

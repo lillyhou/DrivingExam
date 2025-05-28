@@ -17,7 +17,7 @@ export default function RootLayout() {
       <Tabs.Screen
         name="(exam)"
         options={{
-          title: 'Exam Simulator',
+          title: 'Exam Simulation',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="checkmark-done" color={color} size={size} />
           ),

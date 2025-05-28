@@ -16,3 +16,25 @@ console.log("api response:", response.data);
     return createErrorResponse(e);
   }
 }
+
+
+/**
+ * Submit checked answers to backend and get result
+ * @param questionGuid the question GUID
+ * @param checkedAnswers an array of selected answers
+ * @returns result from backend or ErrorResponse
+ */
+export async function checkAnswers(
+  questionGuid: string,
+  checkedAnswers: { guid: string; isChecked: boolean }[]
+): Promise<any | ErrorResponse> {
+  try {
+    const response = await axiosInstance.post(
+      `/api/questions/${questionGuid}/checkanswers`,
+      { checkedAnswers }
+    );
+    return response.data;
+  } catch (e) {
+    return createErrorResponse(e);
+  }
+}
