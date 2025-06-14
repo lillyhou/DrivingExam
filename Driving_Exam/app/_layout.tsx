@@ -1,10 +1,21 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
+import { AuthProvider } from '../contexts/AuthContext';
 
 
 export default function RootLayout() {
  return (
+   <AuthProvider>
     <Tabs>
+        <Tabs.Screen 
+        name="(account)" 
+        options={{ 
+          title: 'Account',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="information-circle" color={color} size={size} />
+          ),
+        }} 
+      />
       <Tabs.Screen 
         name="(modules)" 
         options={{ 
@@ -23,15 +34,9 @@ export default function RootLayout() {
           ),
         }}
       />
-      <Tabs.Screen 
-        name="account" 
-        options={{ 
-          title: 'Account',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="information-circle" color={color} size={size} />
-          ),
-        }} 
-      />
+    
     </Tabs>
+      </AuthProvider>
   );
+
 }

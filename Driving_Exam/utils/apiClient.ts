@@ -7,7 +7,7 @@ export const axiosInstance = axios.create({
     headers: {
         'Content-Type': 'application/json', // Standardheader
     }
-});
+}); 
 
 /**
  * Beschreibt die Struktur einer Fehlerantwort von der API.

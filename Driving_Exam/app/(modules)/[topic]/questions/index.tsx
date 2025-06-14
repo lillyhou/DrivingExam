@@ -111,13 +111,13 @@ export default function QuestionScreen() {
               key={answer.guid}
               style={[
                 styles.answerItem,
-                isSelected && { backgroundColor: '#ede46b' },
+                isSelected && { backgroundColor: '#fcf590' },
               ]}
               onPress={() => toggleAnswer(answer.guid)}
               disabled={lastCheckResult !== null}
             >
               <Text style={styles.answerText}>
-                {isSelected ? '☑' : '☐'} {answer.text}
+                 {(isSelected ? '☑' : '☐') + ' ' + String(answer.text)}
               </Text>
               {lastCheckResult && (
                 <Text style={{ fontSize: 12, color: wasCorrect ? 'green' : 'red' }}>
@@ -131,7 +131,7 @@ export default function QuestionScreen() {
 
       {!submissionResult && (
         <TouchableOpacity style={styles.submitButton} onPress={handleSubmit}>
-          <Text style={styles.submitButtonText}>Submit</Text>
+          <Text style={styles.submitButtonText}>Check the answer</Text>
         </TouchableOpacity>
       )}
 

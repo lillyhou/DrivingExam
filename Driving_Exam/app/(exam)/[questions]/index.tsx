@@ -5,7 +5,7 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { Alert, Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 
-export default function QuestionScreen() {
+export default function ExamQuestionScreen() {
   const { questions: moduleGuid } = useLocalSearchParams();
   const router = useRouter();
 

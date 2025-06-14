@@ -7,7 +7,7 @@ import { useCallback, useState } from 'react';
 import { FlatList, Text, TouchableOpacity, View } from 'react-native';
 
 
-export default function ModulesIndexScreen(){
+export default function ExamModulesIndexScreen(){
     const [modules, setModules] = useState<Module[]>([]);
 
     async function loadModules(){
