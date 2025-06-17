@@ -1,24 +1,27 @@
 import { getExamQuestions } from '@/utils/exams/apiClient';
 import { checkAnswers } from '@/utils/questions/apiClient';
 import { styles } from '@/utils/questions/index.styles';
+import { saveExam } from '@/utils/storage/exams';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { Alert, Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
-
-
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function ExamQuestionScreen() {
-  const { questions: moduleGuid } = useLocalSearchParams();
+   const insets = useSafeAreaInsets(); 
+  const { questions: moduleGuidRaw } = useLocalSearchParams();
   const router = useRouter();
 
+  const moduleGuid = Array.isArray(moduleGuidRaw) ? moduleGuidRaw[0] : moduleGuidRaw;
+
+  const [ready, setReady] = useState(false);
   const [questions, setQuestions] = useState<any[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedAnswers, setSelectedAnswers] = useState<Record<string, Record<string, boolean>>>({});
   const [finalResults, setFinalResults] = useState<{
-    
-    
     totalPoints: number;
     maxPoints: number;
     results: {
@@ -28,18 +31,22 @@ export default function ExamQuestionScreen() {
     }[];
   } | null>(null);
 
+  // Check if param is valid, then mark ready
   useEffect(() => {
-    if (!moduleGuid) return;
+    if (typeof moduleGuid === 'string' && moduleGuid.length > 0 && moduleGuid !== 'redirect') {
+      setReady(true);
+    } else if (moduleGuid === 'redirect') {
+      router.replace('/(exam)');
+    }
+  }, [moduleGuid, router]);
+
+  // Fetch questions once ready
+  useEffect(() => {
+    if (!ready) return;
 
     async function fetchExamQuestions() {
-      if (typeof moduleGuid !== 'string') {
-        setError('Invalid parameters.');
-        setLoading(false);
-        return;
-      }
-
       setLoading(true);
-      const result = await getExamQuestions(moduleGuid);
+      const result = await getExamQuestions(moduleGuid as string);
       setLoading(false);
 
       if ('status' in result) {
@@ -54,7 +61,7 @@ export default function ExamQuestionScreen() {
     }
 
     fetchExamQuestions();
-  }, [moduleGuid]);
+  }, [ready, moduleGuid]);
 
   if (loading) return <Text>Loading...</Text>;
   if (error) return <Text>Error: {error}</Text>;
@@ -109,10 +116,43 @@ export default function ExamQuestionScreen() {
     }
 
     setFinalResults({ totalPoints, maxPoints, results });
+
+    const timestamp = new Date().toISOString();
+    const accessToken = await AsyncStorage.getItem('accessToken');
+
+    const details = questions.map((q) => {
+      const sel = selectedAnswers[q.guid] || {};
+      const selectedArr = q.answers
+        .filter((a: any) => sel[a.guid])
+        .map((a: any) => a.text);
+      const resultForQ = results.find((r) => r.questionGuid === q.guid);
+
+      const correctAnswersObj = resultForQ?.correctAnswers || {};
+      const correctArr = q.answers
+        .filter((a: any) => correctAnswersObj[a.guid] === true)
+        .map((a: any) => a.text);
+
+      return {
+        questionText: q.text,
+        isCorrect: resultForQ?.isCorrect ?? false,
+        selectedAnswers: selectedArr,
+        correctAnswers: correctArr,
+      };
+    });
+
+    await saveExam({
+      id: timestamp,
+      totalPoints,
+      maxPoints,
+      moduleGuid: Array.isArray(moduleGuid) ? moduleGuid[0] : moduleGuid,
+      userToken: accessToken ?? undefined,
+      details,
+    });
   };
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container}
+    contentContainerStyle={{ paddingBottom: insets.bottom + 80 }}>
       <Text style={styles.questionNumber}>Question #{question.number}</Text>
       <Text style={styles.questionText}>{question.text}</Text>
 
@@ -126,10 +166,7 @@ export default function ExamQuestionScreen() {
           return (
             <TouchableOpacity
               key={answer.guid}
-              style={[
-                styles.answerItem,
-                isSelected && { backgroundColor: '#ede46b' },
-              ]}
+              style={[styles.answerItem, isSelected && { backgroundColor: '#ede46b' }]}
               onPress={() => toggleAnswer(question.guid, answer.guid)}
             >
               <Text style={styles.answerText}>
@@ -176,11 +213,7 @@ export default function ExamQuestionScreen() {
                       key={answer.guid}
                       style={{
                         paddingLeft: 10,
-                        color: isCorrect
-                          ? 'green'
-                          : isSelected
-                          ? 'red'
-                          : '#444',
+                        color: isCorrect ? 'green' : isSelected ? 'red' : '#444',
                         fontWeight: isSelected ? 'bold' : 'normal',
                       }}
                     >

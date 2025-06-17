@@ -34,10 +34,7 @@ export default function ExamModulesIndexScreen(){
         keyExtractor={(item) => item.guid.toString()}
         renderItem={({ item }) => (
           <TouchableOpacity style={styles.card}
-          onPress={() => router.push({
-                      pathname: "/(exam)/[questions]",
-                      params: { questions: item.guid, name: item.name + " Exam" }
-                    })}>
+          onPress={() => router.push(`/(exam)/${item.guid}?name=${encodeURIComponent(item.name + " Exam")}`)}>
             
             <Text style={styles.title}>{item.name}</Text>
           </TouchableOpacity>

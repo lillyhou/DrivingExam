@@ -6,7 +6,7 @@ import { AuthProvider } from '../contexts/AuthContext';
 export default function RootLayout() {
  return (
    <AuthProvider>
-    <Tabs>
+    <Tabs initialRouteName="(account)">
         <Tabs.Screen 
         name="(account)" 
         options={{ 

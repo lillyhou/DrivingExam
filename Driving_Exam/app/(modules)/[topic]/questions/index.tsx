@@ -3,8 +3,11 @@ import { styles } from '@/utils/questions/index.styles';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { Alert, Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
 
 export default function QuestionScreen() {
+   const insets = useSafeAreaInsets(); 
   const { topic: moduleGuid, topicGuid, topicName } = useLocalSearchParams();
   const router = useRouter();
 
@@ -93,7 +96,8 @@ export default function QuestionScreen() {
   };
 
   return (
-    <ScrollView style={styles.container} >
+    <ScrollView style={styles.container} 
+    contentContainerStyle={{ paddingBottom: insets.bottom + 80 }} >
       <Text style={styles.topicName}>{topicName}</Text>
       <Text style={styles.questionNumber}>Question #{question.number}</Text>
       <Text style={styles.questionText}>{question.text}</Text>
