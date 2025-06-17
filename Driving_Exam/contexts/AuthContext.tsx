@@ -1,67 +1,39 @@
-import { useRouter } from 'expo-router';
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
-type AuthActions = {
-  setActiveUser: (user: string | null) => void;
-  logout: () => Promise<void>;
+type UserInfo = {
+  name: string;
+  email: string;
 };
 
+
 type AuthContextType = {
-  activeUser: string | null;
-  actions: AuthActions;
+  accessToken: string | null;
+  user: UserInfo | null;
+  setAccessToken: (token: string | null) => void;
+  setUser: (user: UserInfo | null) => void;
+  logout: () => void;
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [activeUser, setActiveUser] = useState<string | null>(null);
-  const router = useRouter();
+  const [accessToken, setAccessToken] = useState<string | null>(null);
+  const [user, setUser] = useState<UserInfo | null>(null);
 
-  // Fetch current user from backend on mount
- useEffect(() => {
-  async function fetchUser() {
-    try {
-      const apiUrl = process.env.EXPO_PUBLIC_API_URL || '';
-      const url = `${apiUrl.replace(/\/$/, '')}/oauth/me`;
-      const res = await fetch(url, {
-        credentials: 'include',
-      });
-      if (res.ok) {
-        const data = await res.json();
-        setActiveUser(data.username || null);
-      } else {
-        setActiveUser(null);
-      }
-    } catch (err) {
-      setActiveUser(null);
-    }
-  }
-  fetchUser();
-}, []);
-
-  // Logout function calls backend and clears state
-  const logout = async () => {
-    try {
-      await fetch('https://your-backend.com/oauth/logout', {
-        method: 'GET',
-        credentials: 'include',
-      });
-    } catch (err) {
-      console.error('Logout failed', err);
-    }
-    setActiveUser(null);
-    router.replace('/'); // or wherever you want to redirect after logout
+  const logout = () => {
+    setAccessToken(null);
+    setUser(null);
   };
 
   return (
-   <AuthContext.Provider value={{ activeUser, actions: { setActiveUser, logout } }}>
-    {children}
-  </AuthContext.Provider>
+    <AuthContext.Provider value={{ accessToken, user, setAccessToken, setUser, logout }}>
+      {children}
+    </AuthContext.Provider>
   );
 };
 
-export const useAuth = () => {
+export const useAuth = (): AuthContextType => {
   const context = useContext(AuthContext);
-  if (!context) throw new Error('useAuth must be used within AuthProvider');
+  if (!context) throw new Error('useAuth must be used within an AuthProvider');
   return context;
 };

@@ -43,8 +43,10 @@
     "react-native-svg": "15.11.2",
     "react-native-web": "~0.20.0",
     "react-native-webview": "13.13.5",
-    "expo-auth-session": "~6.2.0",
-    "expo-secure-store": "~14.2.3"
+    "expo-auth-session": "^6",
+    "expo-secure-store": "~14.2.3",
+    "@expo/config-plugins": "~10.0.0",
+    "@react-native-async-storage/async-storage": "2.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
