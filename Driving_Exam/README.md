@@ -1,19 +1,36 @@
-# Welcome to your Expo app 👋
+# Driving Exam App (React Native + Azure AD)
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
+## Authentication
+
+- **Login Provider**: Microsoft Azure Active Directory (OAuth2)
+- **Login Method**: 
+  - Uses [`expo-auth-session`](https://docs.expo.dev/versions/latest/sdk/auth-session/) for secure Microsoft login on mobile.
+  - Azure login flow is handled entirely on the **frontend**.
+  - Backend can verify identity using the ID token if needed.
+
+
+## Notes
+- This app uses local device storage (AsyncStorage) to save completed exams.
+- All questions are fetched from a backend API.
+- The **Exam Simulation** feature randomly selects 20 questions from each module (handled by the backend controller).
+
 ## Get started
 
-1. Install dependencies
+1. Start the backend server  
+   Run the `startServer.cmd` file located in the `DrivingExamBackend` folder.
+
+2. Install dependencies
 
    ```bash
    npm install
    ```
 
-2. Start the app
+3. Run the app on Android
 
    ```bash
-   npx expo start
+   npm run android
    ```
 
 In the output, you'll find options to open the app in a
@@ -25,15 +42,6 @@ In the output, you'll find options to open the app in a
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
 ## Learn more
 
