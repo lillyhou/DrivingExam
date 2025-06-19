@@ -5,12 +5,22 @@ import * as WebBrowser from 'expo-web-browser';
 import { useCallback, useEffect } from 'react';
 import { ActivityIndicator, Button, Text, View } from 'react-native';
 import { useAuth } from '../../contexts/AuthContext';
+// import environment variables using expo-constants
+
+const AZURE_CLIENT_ID = process.env.EXPO_PUBLIC_AZURE_CLIENT_ID;
+const AZURE_TENANT_ID = process.env.EXPO_PUBLIC_AZURE_TENANT_ID;
 
 WebBrowser.maybeCompleteAuthSession();
 
-//Need to be replaced!!
-const clientId = null;
-const tenantId = null;
+if (!AZURE_CLIENT_ID) {
+  throw new Error('Missing EXPO_PUBLIC_AZURE_CLIENT_ID environment variable');
+}
+if (!AZURE_TENANT_ID) {
+  throw new Error('Missing EXPO_PUBLIC_AZURE_TENANT_ID environment variable');
+}
+
+const clientId: string = AZURE_CLIENT_ID;
+const tenantId: string = AZURE_TENANT_ID;
 
 const discovery = {
   authorizationEndpoint: `https://login.microsoftonline.com/${tenantId}/oauth2/v2.0/authorize`,
@@ -18,6 +28,9 @@ const discovery = {
 };
 
 export default function AccountScreen() {
+
+  //console.log('AccountScreen loaded with clientId:', clientId);
+  //console.log('AccountScreen loaded with tenantId:', tenantId);
   const router = useRouter();
   const {
     user,
