@@ -11,9 +11,9 @@ Welcome to the **Driving Exam Practice App** — an interactive learning tool de
 
 ## 🎬 Demo Video
 
-<video src="Android Emulator  - drivingExam - whole functions.mp4" controls width="600"></video>
+<video src="DrivingExam_demo.mp4" controls width="600"></video>
 
-> If the video doesn’t play in GitHub, you can [download it here](./Android Emulator  - drivingExam - whole functions.mp4).
+> If the video doesn’t play in GitHub, you can [download it here](./DrivingExam_demo.mp4).
 
 ---
 
