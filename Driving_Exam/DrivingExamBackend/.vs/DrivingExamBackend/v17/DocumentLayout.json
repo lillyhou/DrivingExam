@@ -1,0 +1,188 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\appsettings.Development.json.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\appsettings.Development.json.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\Infrastructure\\DrivingExamContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Infrastructure\\DrivingExamContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chuny\\AppData\\Local\\SourceServer\\29b51d7b5ec31dc82bb6549c1b1cdf5228e8687f4ac28fee31a551e8aa79df05\\Driving_Exam\\DrivingExamBackend\\src\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\Models\\Topic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Models\\Topic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\Models\\Question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Models\\Question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\Models\\Module.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Models\\Module.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chuny\\AppData\\Local\\SourceServer\\7152040af41cfa7fff1a11b9ff9f10ab857e4a56cb40f148971bd9ecc9d4e08f\\Driving_Exam\\DrivingExamBackend\\src\\Infrastructure\\DrivingExamContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\Controllers\\OauthController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Controllers\\OauthController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Question.cs",
+              "DocumentMoniker": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\Models\\Question.cs",
+              "RelativeDocumentMoniker": "src\\Models\\Question.cs",
+              "ToolTip": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\Models\\Question.cs",
+              "RelativeToolTip": "src\\Models\\Question.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAACIAAACuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T16:53:45.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Module.cs",
+              "DocumentMoniker": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\Models\\Module.cs",
+              "RelativeDocumentMoniker": "src\\Models\\Module.cs",
+              "ToolTip": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\Models\\Module.cs",
+              "RelativeToolTip": "src\\Models\\Module.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAACuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T16:53:34.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\chuny\\AppData\\Local\\SourceServer\\29b51d7b5ec31dc82bb6549c1b1cdf5228e8687f4ac28fee31a551e8aa79df05\\Driving_Exam\\DrivingExamBackend\\src\\Program.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Users\\chuny\\AppData\\Local\\SourceServer\\29b51d7b5ec31dc82bb6549c1b1cdf5228e8687f4ac28fee31a551e8aa79df05\\Driving_Exam\\DrivingExamBackend\\src\\Program.cs",
+              "ToolTip": "C:\\Users\\chuny\\AppData\\Local\\SourceServer\\29b51d7b5ec31dc82bb6549c1b1cdf5228e8687f4ac28fee31a551e8aa79df05\\Driving_Exam\\DrivingExamBackend\\src\\Program.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Users\\chuny\\AppData\\Local\\SourceServer\\29b51d7b5ec31dc82bb6549c1b1cdf5228e8687f4ac28fee31a551e8aa79df05\\Driving_Exam\\DrivingExamBackend\\src\\Program.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAIAwwFoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T16:51:13.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DrivingExamContext.cs",
+              "DocumentMoniker": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\Infrastructure\\DrivingExamContext.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\DrivingExamContext.cs",
+              "ToolTip": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\Infrastructure\\DrivingExamContext.cs",
+              "RelativeToolTip": "src\\Infrastructure\\DrivingExamContext.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAIAwwHYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T16:46:49.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\appsettings.json",
+              "ToolTip": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\appsettings.json",
+              "RelativeToolTip": "src\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-16T16:39:21.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.Development.json.txt",
+              "DocumentMoniker": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\appsettings.Development.json.txt",
+              "RelativeDocumentMoniker": "src\\appsettings.Development.json.txt",
+              "ToolTip": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\appsettings.Development.json.txt",
+              "RelativeToolTip": "src\\appsettings.Development.json.txt",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-06-16T15:22:50.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DrivingExamContext.cs",
+              "DocumentMoniker": "C:\\Users\\chuny\\AppData\\Local\\SourceServer\\7152040af41cfa7fff1a11b9ff9f10ab857e4a56cb40f148971bd9ecc9d4e08f\\Driving_Exam\\DrivingExamBackend\\src\\Infrastructure\\DrivingExamContext.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Users\\chuny\\AppData\\Local\\SourceServer\\7152040af41cfa7fff1a11b9ff9f10ab857e4a56cb40f148971bd9ecc9d4e08f\\Driving_Exam\\DrivingExamBackend\\src\\Infrastructure\\DrivingExamContext.cs",
+              "ToolTip": "C:\\Users\\chuny\\AppData\\Local\\SourceServer\\7152040af41cfa7fff1a11b9ff9f10ab857e4a56cb40f148971bd9ecc9d4e08f\\Driving_Exam\\DrivingExamBackend\\src\\Infrastructure\\DrivingExamContext.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Users\\chuny\\AppData\\Local\\SourceServer\\7152040af41cfa7fff1a11b9ff9f10ab857e4a56cb40f148971bd9ecc9d4e08f\\Driving_Exam\\DrivingExamBackend\\src\\Infrastructure\\DrivingExamContext.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAUwH4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T11:51:08.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\Program.cs",
+              "RelativeDocumentMoniker": "src\\Program.cs",
+              "ToolTip": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\Program.cs",
+              "RelativeToolTip": "src\\Program.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAFYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T09:45:07.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Topic.cs",
+              "DocumentMoniker": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\Models\\Topic.cs",
+              "RelativeDocumentMoniker": "src\\Models\\Topic.cs",
+              "ToolTip": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\Models\\Topic.cs",
+              "RelativeToolTip": "src\\Models\\Topic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAACuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T16:53:54.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OauthController.cs",
+              "DocumentMoniker": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\Controllers\\OauthController.cs",
+              "RelativeDocumentMoniker": "src\\Controllers\\OauthController.cs",
+              "ToolTip": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\Controllers\\OauthController.cs",
+              "RelativeToolTip": "src\\Controllers\\OauthController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAUwD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T11:58:29.523Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

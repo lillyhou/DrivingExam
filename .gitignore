@@ -1,7 +1,0 @@
-**/node_modules
-**/.next
-**/bin
-**/obj
-**/.vs
-**/.vscode
-.DS_Store

@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{963AB7AF-E71D-4352-91CA-2ECD34D12D37}|DrivingExamBackend.csproj|c:\\github\\wmc_6akif\\driving_exam\\drivingexambackend\\src\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{963AB7AF-E71D-4352-91CA-2ECD34D12D37}|DrivingExamBackend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{963AB7AF-E71D-4352-91CA-2ECD34D12D37}|DrivingExamBackend.csproj|c:\\github\\wmc_6akif\\driving_exam\\drivingexambackend\\src\\guestauthenticationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{963AB7AF-E71D-4352-91CA-2ECD34D12D37}|DrivingExamBackend.csproj|solutionrelative:guestauthenticationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{963AB7AF-E71D-4352-91CA-2ECD34D12D37}|DrivingExamBackend.csproj|c:\\github\\wmc_6akif\\driving_exam\\drivingexambackend\\src\\extenstions\\webapplicationbuilderextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{963AB7AF-E71D-4352-91CA-2ECD34D12D37}|DrivingExamBackend.csproj|solutionrelative:extenstions\\webapplicationbuilderextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{963AB7AF-E71D-4352-91CA-2ECD34D12D37}|DrivingExamBackend.csproj|c:\\github\\wmc_6akif\\driving_exam\\drivingexambackend\\src\\drivingexambackend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{963AB7AF-E71D-4352-91CA-2ECD34D12D37}|DrivingExamBackend.csproj|solutionrelative:drivingexambackend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T09:49:38.454Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GuestAuthenticationHandler.cs",
+              "DocumentMoniker": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\GuestAuthenticationHandler.cs",
+              "RelativeDocumentMoniker": "GuestAuthenticationHandler.cs",
+              "ToolTip": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\GuestAuthenticationHandler.cs",
+              "RelativeToolTip": "GuestAuthenticationHandler.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T09:49:41.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WebApplicationBuilderExtension.cs",
+              "DocumentMoniker": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\Extenstions\\WebApplicationBuilderExtension.cs",
+              "RelativeDocumentMoniker": "Extenstions\\WebApplicationBuilderExtension.cs",
+              "ToolTip": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\Extenstions\\WebApplicationBuilderExtension.cs",
+              "RelativeToolTip": "Extenstions\\WebApplicationBuilderExtension.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAQwA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T09:48:10.268Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DrivingExamBackend",
+              "DocumentMoniker": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\DrivingExamBackend.csproj",
+              "RelativeDocumentMoniker": "DrivingExamBackend.csproj",
+              "ToolTip": "C:\\Github\\WMC_6AKIF\\Driving_Exam\\DrivingExamBackend\\src\\DrivingExamBackend.csproj",
+              "RelativeToolTip": "DrivingExamBackend.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-30T09:47:55.175Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
